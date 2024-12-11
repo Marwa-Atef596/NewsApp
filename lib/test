@@ -1,0 +1,58 @@
+// import 'package:dio/dio.dart';
+// import 'package:flutter/material.dart';
+// import 'package:news_app/model/article_model.dart';
+// import 'package:news_app/services/new_service.dart';
+
+// import 'newsTile.dart';
+
+// class NewsListview extends StatefulWidget {
+//   const NewsListview({
+//     super.key,
+//   });
+
+//   @override
+//   State<NewsListview> createState() => _NewsListviewState();
+// }
+
+// class _NewsListviewState extends State<NewsListview> {
+//   List<ArticleModel> articles = [];
+//   bool isLoading = true;
+//   @override
+//   void initState() {
+//     super.initState();
+//     getGeneralNews();
+//   }
+
+//   Future<void> getGeneralNews() async {
+//     articles = await NewsService(Dio()).getNews();
+//     isLoading = false;
+//     setState(() {});
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return isLoading
+//         ? const SliverToBoxAdapter(
+//             child: Center(child: CircularProgressIndicator()))
+//         : SliverList(
+// //اسكرول الصفحه كلها وخى فيها ليست فيو
+//             delegate: SliverChildBuilderDelegate(childCount: articles.length,
+//                 (context, index) {
+//             return Padding(
+//               padding: const EdgeInsets.only(bottom: 22),
+//               child: NewTile(
+//                 articleModel: articles[index],
+//               ),
+//             );
+//           }));
+//     //  ListView.builder(
+//     //     physics: const BouncingScrollPhysics(), //يلغى الازرق االى ف الاسكرول
+//     //     itemCount: 10,
+//     //     itemBuilder: (context, i) {
+//     //       return const Padding(
+//     //         padding: EdgeInsets.only(bottom: 22),
+//     //         child: NewTile(),
+//     //       );
+//     //     });
+//   }
+// }
